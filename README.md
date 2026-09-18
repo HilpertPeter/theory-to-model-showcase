@@ -9,6 +9,18 @@ human reviewer can inspect, correct and evaluate.
 
 ![From publications to reviewable evidence](assets/overview.svg)
 
+## Inspect the work in five minutes
+
+1. **Trace a claim:** read the [invented source](examples/source.txt) and its
+   [evidence object](examples/evidence.json). The original suggestion and the
+   correction are separate records.
+2. **Verify the artifact:** run `python3 examples/verify_evidence.py` to check the
+   actual source hash, text span and review link. No API key or dependencies.
+3. **Inspect the workflow:** see the source-context and evaluation screenshots
+   below, then the [observed error classes](docs/observed-errors.md).
+4. **Check the limits:** [validation evidence](docs/validation-scope.md) separates
+   tested software behavior from scientific benchmarking that is still pending.
+
 ## The problem
 
 A scientific paper spreads its argument across prose, tables and statistical
@@ -56,9 +68,32 @@ then refined the system through direct use and targeted tests.
 The research interface is currently German. This is a demonstration, not a
 benchmark result.*
 
-A typical reviewer moves from a proposed study target to its source sentences,
-checks the local context, and records a decision. The original suggestion remains
-available. Related evidence can then support a separate model-coherence review.
+The walkthrough has three stages: **target → source-context review → separate
+model-coherence evaluation**. A correction is illustrated explicitly in the
+[public JSON example](examples/evidence.json), with the original suggestion retained.
+
+<details>
+<summary><strong>2. Inspect the source sentence and record a human decision</strong></summary>
+
+![Source context and separate human decision](assets/source-review.png)
+
+The highlighted sentence is read with its immediately preceding context. The
+reviewer confirms or changes the category and records the relevant evidence form.
+All text in this screenshot is invented.
+
+</details>
+
+<details>
+<summary><strong>3. Evaluate the reasoning separately from extraction</strong></summary>
+
+![Separate human evaluation using synthetic inputs](assets/evaluation-review.png)
+
+A synthetic example of the human-led evaluation screen. The judgment remains
+“not decidable” while supporting evidence has not been fully checked. The entries
+illustrate interaction with the prototype, not a research result or an automatic
+causal judgment.
+
+</details>
 
 ## What has been checked
 
@@ -66,6 +101,10 @@ The September handoff passed **46 synthetic pipeline regression tests**,
 additional persistence and JavaScript checks, and browser tests covering demo
 startup, saving and reloading decisions. Test cases address failure modes such
 as citation abbreviations, section changes, duplicate evidence and stale writes.
+
+See the [validation scope](docs/validation-scope.md) for what each type of check
+supports, and the [error taxonomy](docs/observed-errors.md) for concrete failure
+modes and remaining limits.
 
 The prototype has also undergone iterative human review on a small development
 set. That informed improvements; it does **not** establish an independent
@@ -90,6 +129,8 @@ HTML/CSS/JavaScript, pytest, unittest and browser automation.
 This is a curated project showcase. The research implementation, prompts,
 proprietary evaluation logic and datasets remain private. No executable
 extraction pipeline, API credentials or publication content is distributed here.
+The small public verifier checks only the illustrative artifact; it does not
+expose extraction prompts, internal schemas or scientific scoring rules.
 
 For a technical discussion or a guided demonstration, contact Peter Hilpert
 through the application or profile accompanying this portfolio.

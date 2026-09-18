@@ -1,0 +1,2 @@
+# Keep the public example's byte-level hash reproducible across checkouts.
+examples/source.txt text eol=lf

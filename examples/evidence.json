@@ -1,0 +1,34 @@
+{
+  "format": "illustrative-public-evidence-v1",
+  "synthetic": true,
+  "document": {
+    "id": "DEMO-DOC-001",
+    "text_file": "source.txt",
+    "sha256": "d78a0912ebd933459f8d0e4258b466e5d4cbab3006e193d804a025549b615c00",
+    "hash_scope": "Exact file bytes, UTF-8 encoding, LF line endings, including final newline"
+  },
+  "evidence": {
+    "id": "DEMO-EVIDENCE-001",
+    "section": "Study expectations (invented)",
+    "span": {
+      "unit": "Unicode code points",
+      "start": 67,
+      "end": 144,
+      "end_exclusive": true
+    },
+    "quote": "We hypothesize that greater social support is associated with lower distress."
+  },
+  "suggestion": {
+    "id": "DEMO-SUGGESTION-001",
+    "origin": "Handwritten, intentionally incorrect demonstration; not an LLM output",
+    "label": "prior_finding"
+  },
+  "review": {
+    "id": "DEMO-REVIEW-001",
+    "origin": "Invented demonstration decision; not a research annotation",
+    "suggestion_id": "DEMO-SUGGESTION-001",
+    "decision": "corrected",
+    "label": "study_expectation",
+    "reason": "The authors state what they expect in their own study, rather than reporting a finding from earlier work."
+  }
+}
