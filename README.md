@@ -21,6 +21,20 @@ human reviewer can inspect, correct and evaluate.
 4. **Check the limits:** [validation evidence](docs/validation-scope.md) separates
    tested software behavior from scientific benchmarking that is still pending.
 
+## Run the public example
+
+With Python 3.10 or newer, from a local clone of this repository:
+
+```bash
+python3 examples/verify_evidence.py
+python3 -m unittest discover -s examples -p 'test_*.py'
+```
+
+This verifies the synthetic evidence artifact and runs four verifier tests.
+It requires no API key, network access or additional packages. The interactive
+review interface shown below is available through a guided demonstration;
+its implementation is part of the private research repository.
+
 ## The problem
 
 A scientific paper spreads its argument across prose, tables and statistical
@@ -134,3 +148,10 @@ expose extraction prompts, internal schemas or scientific scoring rules.
 
 For a technical discussion or a guided demonstration, contact Peter Hilpert
 through the application or profile accompanying this portfolio.
+
+## License
+
+The files distributed in this showcase are available under the [MIT License](LICENSE),
+including the synthetic examples and documentation. This license does not cover
+the private research implementation, prompts or datasets that are not distributed
+in this repository.
