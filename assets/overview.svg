@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
+<title id="title">Theory-to-Model: from publications to reviewable evidence</title>
+<desc id="desc">Publication discovery and screening, document structuring, AI-assisted extraction and human review. Source traceability, separate human decisions and targeted tests support the workflow. This is a research prototype.</desc>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#527d70"/></marker></defs>
+<rect width="1200" height="470" rx="20" fill="#f2f6f3"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="38" y="48" font-size="14" font-weight="700" letter-spacing="2" fill="#387461">APPLIED AI / DOCUMENT INTELLIGENCE</text>
+<text x="38" y="95" font-size="35" font-weight="700" fill="#153e33">From publications to reviewable evidence.</text>
+<text x="38" y="128" font-size="18" fill="#52665e">Automate the preparation. Keep the evidence and the human judgment visible.</text>
+<g fill="#fff" stroke="#cbdcd2"><rect x="38" y="171" width="256" height="152" rx="12"/><rect x="328" y="171" width="256" height="152" rx="12"/><rect x="618" y="171" width="256" height="152" rx="12"/><rect x="908" y="171" width="254" height="152" rx="12"/></g>
+<g fill="#33765d" font-size="13" font-weight="700"><text x="57" y="201">01 / DISCOVER</text><text x="347" y="201">02 / STRUCTURE</text><text x="637" y="201">03 / EXTRACT</text><text x="927" y="201">04 / REVIEW</text></g>
+<g fill="#163e33" font-size="23" font-weight="700"><text x="57" y="237">Find relevant papers</text><text x="347" y="237">Organize documents</text><text x="637" y="237">Propose evidence</text><text x="927" y="237">Inspect and decide</text></g>
+<g fill="#52665e" font-size="16"><text x="57" y="269">Metadata retrieval</text><text x="57" y="295">Eligibility screening</text><text x="347" y="269">PDF conversion and cleaning</text><text x="347" y="295">Sections and source locations</text><text x="637" y="269">Constrained LLM extraction</text><text x="637" y="295">Structured, linked output</text><text x="927" y="269">Context, corrections</text><text x="927" y="295">and human-led evaluation</text></g>
+<g stroke="#527d70" stroke-width="2" marker-end="url(#arrow)"><path d="M298 245H320"/><path d="M588 245H610"/><path d="M878 245H900"/></g>
+<rect x="38" y="350" width="1124" height="63" rx="12" fill="#1d493d"/>
+<g font-size="17" fill="#fff"><text x="60" y="389">Traceable source evidence</text><text x="425" y="389">Separate human decisions</text><text x="805" y="389">Targeted regression tests</text></g>
+<text x="38" y="445" font-size="13" fill="#5d7066">Peter Hilpert · Research prototype · Human review remains part of the system</text>
+</g></svg>
