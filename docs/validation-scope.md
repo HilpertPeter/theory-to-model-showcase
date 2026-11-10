@@ -1,56 +1,41 @@
 # Validation evidence and its limits
 
-Status: September 2026 development handoff. No independent scientific benchmark
-is claimed in this showcase.
+**Updated November 2026.** This page distinguishes a functioning research
+prototype from independently demonstrated scientific performance.
 
-## Technical checks completed in the private implementation
+## What has been exercised
 
-| Area | Evidence | What it supports |
+| Evidence | What it supports | What it does not establish |
 |---|---|---|
-| Document and inventory pipeline | 46 synthetic pytest cases passed | Regression checks for structural and contract-level failure modes |
-| Human-review persistence | Unit tests for revision conflicts, source identity, record separation and save/read behavior | Correct behavior on the tested storage scenarios |
-| Browser interactions | JavaScript checks and browser exercises for page changes, shared evidence, category-specific controls and reload | Behavior of the exercised interface flows |
-| Portable synthetic demonstration | Startup without research files or API keys; real HTTP save/reload | A working local demonstration, not just a visual design |
-| Scientific coding workflow | Iterative human inspection of development publications | Discovery of ambiguous definitions and workflow problems |
+| Local coding and review workflows | Source inspection, separate human decisions and an operational supervised process | A hosted, production-ready multiuser service |
+| September technical handoff: 46 synthetic pipeline tests, with additional interface and persistence checks | Behavior on documented document-processing and storage failure cases | Accuracy of scientific classifications on unseen papers |
+| November technical handoff: 25 synthetic checks for evidence contracts and a coherence-to-report demo | Evidence integrity, scope handling and behavior on explicit contrast scenarios | General causal validity or autonomous paper-review accuracy |
+| Iterative expert review of development material | Identification of ambiguous cases and improvements to rules and presentation | Independent human–AI or human–human reliability |
+| Small evidence-graph and agent-style review experiments | Feasibility of linked retrieval, critique and recorded revision | Superiority over a simpler serial workflow |
 
-The private test suite is not distributed here. The evidence example below is
-intentionally small enough to inspect directly and independent of that suite.
+The September and November counts refer to different, dated test runs. They are
+not a combined performance score. The private implementation and its test suites
+are not distributed in this portfolio.
 
-## What you can verify in this public repository
+## What the public examples demonstrate
 
-Read `examples/source.txt` and `examples/evidence.json`. Then run:
+The screenshots show a working local interface using invented material. The
+[review example](review-example.md) is a handwritten illustration of useful
+feedback. It is not a model prediction, an annotation from a real study, or an
+independent reference judgment. The diagrams summarize product behavior without
+publishing the internal decision procedure.
 
-```bash
-python3 examples/verify_evidence.py
-```
+## Next evaluation milestones
 
-You can also run the four public artifact tests:
+- Freeze a compatible rule and software version before testing on new material.
+- Obtain independent annotations with adequate source context and retain the
+  first answers separately from adjudication.
+- Measure missed evidence and false findings, not just agreement on selected cases.
+- Compare serial processing, graphs and bounded adaptive checking with matched
+  inputs and explicit resource budgets.
+- Measure cost, elapsed time and human-review minutes alongside quality.
+- Test whether reviewers understand the findings and find the suggested revisions useful.
 
-```bash
-python3 -m unittest discover -s examples -p 'test_*.py'
-```
-
-They check the valid example and rejection of altered source bytes, a wrong span
-and a broken review link. These four tests are separate from the 46 private
-pipeline tests; they do not reproduce that suite.
-
-The script checks the source's actual SHA-256 hash, an exact half-open Unicode
-character span and the link between an unchanged suggestion and a separate
-correction. The suggestion is deliberately wrong and both decisions are
-handwritten for the demonstration. The object is an illustrative public format,
-not the internal schema. The verifier uses Python's standard library and makes
-no network or LLM calls.
-
-These checks can reject a modified source file, invalid span or broken review
-link. They do not validate the scientific correctness of the chosen labels.
-
-## Still to establish
-
-- Independent precision/recall and completeness across unseen publications.
-- Interrater reliability and adjudication under a frozen coding protocol.
-- Scientific validity of automated coherence judgments.
-- Measured reviewer time savings and production-scale cost/reliability.
-- Authenticated multiuser deployment and institutional operational safeguards.
-
-Software regression tests, manual development review and scientific benchmarking
-answer different questions. They should not be combined into an accuracy claim.
+Human discussion has been valuable for development. Agreement after that
+conversation cannot be treated as an independent accuracy estimate. Confidence
+signals also require calibration before they can justify unattended acceptance.

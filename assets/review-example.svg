@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="650" viewBox="0 0 1280 650" role="img" aria-labelledby="title desc">
+<title id="title">An invented example of actionable reviewer feedback</title>
+<desc id="desc">A study asks about an association and reports an association, while the discussion claims an intervention effect. Feedback explains this gap and suggests a narrower conclusion. This is a handwritten illustration, not an automated result.</desc>
+<rect width="1280" height="650" rx="24" fill="#f4f7f6"/>
+<g font-family="Arial, Helvetica, sans-serif">
+<text x="48" y="46" fill="#477062" font-size="13" font-weight="700" letter-spacing="1.8">REVIEWER VIEW / INVENTED EXAMPLE</text>
+<text x="48" y="94" fill="#173f37" font-size="34" font-weight="700">One observation. A stronger conclusion.</text>
+<text x="48" y="130" fill="#52695f" font-size="19">Show where the argument changes, then explain what would improve it.</text>
+<g fill="#ffffff" stroke="#cbdcd3">
+<rect x="48" y="168" width="364" height="192" rx="12"/>
+<rect x="458" y="168" width="364" height="192" rx="12"/>
+</g>
+<rect x="868" y="168" width="364" height="192" rx="12" fill="#fff6e5" stroke="#d6b773"/>
+<g fill="#3c6c59" font-size="13" font-weight="700" letter-spacing="1">
+<text x="70" y="202">STUDY AIM</text><text x="480" y="202">REPORTED RESULT</text>
+</g>
+<text x="890" y="202" fill="#865e1c" font-size="13" font-weight="700" letter-spacing="1">DISCUSSION CLAIM</text>
+<g fill="#203f35" font-size="22">
+<text x="70" y="246">Are support and distress</text><text x="70" y="279">associated?</text>
+<text x="480" y="246">More reported support,</text><text x="480" y="279">less reported distress.</text>
+<text x="890" y="246">Increasing support</text><text x="890" y="279">will reduce distress.</text>
+</g>
+<g fill="#64746d" font-size="16">
+<text x="70" y="330">Questionnaire study</text><text x="480" y="330">An observed relationship</text>
+</g>
+<text x="890" y="330" fill="#865e1c" font-size="16">A claim about changing an outcome</text>
+<g fill="#688577" font-size="27"><text x="422" y="272">→</text><text x="832" y="272">→</text></g>
+<rect x="48" y="388" width="1184" height="197" rx="14" fill="#e2eee8"/>
+<text x="72" y="424" fill="#255a46" font-size="13" font-weight="700" letter-spacing="1">USEFUL FEEDBACK</text>
+<text x="72" y="462" fill="#173f37" font-size="23" font-weight="700">The analysis does not establish the proposed intervention effect.</text>
+<g fill="#365749" font-size="20">
+<text x="72" y="503">Keep the observed association. Present the intervention benefit as a possibility</text>
+<text x="72" y="535">requiring further evidence, or explain the basis for the causal interpretation.</text>
+</g>
+<text x="48" y="619" fill="#60766c" font-size="14">Illustrative communication design · Handwritten content · Supporting source context available in the working prototype</text>
+</g></svg>

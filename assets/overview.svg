@@ -1,18 +1,36 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
-<title id="title">Theory-to-Model: from publications to reviewable evidence</title>
-<desc id="desc">Publication discovery and screening, document structuring, AI-assisted extraction and human review. Source traceability, separate human decisions and targeted tests support the workflow. This is a research prototype.</desc>
-<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#527d70"/></marker></defs>
-<rect width="1200" height="470" rx="20" fill="#f2f6f3"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="600" viewBox="0 0 1280 600" role="img" aria-labelledby="title desc">
+<title id="title">Theory-to-Model: evidence-linked AI review</title>
+<desc id="desc">A research prototype connects source documents to claims, human review and actionable feedback. First evidence-graph and focused-agent experiments complement the supervised workflow.</desc>
+<rect width="1280" height="600" rx="24" fill="#f0f5f3"/>
+<path d="M24 0H1256Q1280 0 1280 24V194H0V24Q0 0 24 0" fill="#153e39"/>
 <g font-family="Arial, Helvetica, sans-serif">
-<text x="38" y="48" font-size="14" font-weight="700" letter-spacing="2" fill="#387461">APPLIED AI / DOCUMENT INTELLIGENCE</text>
-<text x="38" y="95" font-size="35" font-weight="700" fill="#153e33">From publications to reviewable evidence.</text>
-<text x="38" y="128" font-size="18" fill="#52665e">Automate the preparation. Keep the evidence and the human judgment visible.</text>
-<g fill="#fff" stroke="#cbdcd2"><rect x="38" y="171" width="256" height="152" rx="12"/><rect x="328" y="171" width="256" height="152" rx="12"/><rect x="618" y="171" width="256" height="152" rx="12"/><rect x="908" y="171" width="254" height="152" rx="12"/></g>
-<g fill="#33765d" font-size="13" font-weight="700"><text x="57" y="201">01 / DISCOVER</text><text x="347" y="201">02 / STRUCTURE</text><text x="637" y="201">03 / EXTRACT</text><text x="927" y="201">04 / REVIEW</text></g>
-<g fill="#163e33" font-size="23" font-weight="700"><text x="57" y="237">Find relevant papers</text><text x="347" y="237">Organize documents</text><text x="637" y="237">Propose evidence</text><text x="927" y="237">Inspect and decide</text></g>
-<g fill="#52665e" font-size="16"><text x="57" y="269">Metadata retrieval</text><text x="57" y="295">Eligibility screening</text><text x="347" y="269">PDF conversion and cleaning</text><text x="347" y="295">Sections and source locations</text><text x="637" y="269">Constrained LLM extraction</text><text x="637" y="295">Structured, linked output</text><text x="927" y="269">Context, corrections</text><text x="927" y="295">and human-led evaluation</text></g>
-<g stroke="#527d70" stroke-width="2" marker-end="url(#arrow)"><path d="M298 245H320"/><path d="M588 245H610"/><path d="M878 245H900"/></g>
-<rect x="38" y="350" width="1124" height="63" rx="12" fill="#1d493d"/>
-<g font-size="17" fill="#fff"><text x="60" y="389">Traceable source evidence</text><text x="425" y="389">Separate human decisions</text><text x="805" y="389">Targeted regression tests</text></g>
-<text x="38" y="445" font-size="13" fill="#5d7066">Peter Hilpert · Research prototype · Human review remains part of the system</text>
+<text x="56" y="51" fill="#a9d9c9" font-size="14" font-weight="700" letter-spacing="2">APPLIED AI / RESEARCH INTELLIGENCE</text>
+<text x="56" y="108" fill="#ffffff" font-size="46" font-weight="700">Theory-to-Model</text>
+<text x="56" y="151" fill="#dcece6" font-size="23">From fragmented documents to reasoning a reviewer can inspect.</text>
+<g fill="#ffffff" stroke="#ceded6">
+<rect x="56" y="226" width="280" height="171" rx="14"/>
+<rect x="352" y="226" width="280" height="171" rx="14"/>
+<rect x="648" y="226" width="280" height="171" rx="14"/>
+<rect x="944" y="226" width="280" height="171" rx="14"/>
+</g>
+<g fill="#397562" font-size="13" font-weight="700" letter-spacing="1">
+<text x="78" y="258">01 / SOURCE</text><text x="374" y="258">02 / EVIDENCE</text>
+<text x="670" y="258">03 / JUDGMENT</text><text x="966" y="258">04 / FEEDBACK</text>
+</g>
+<g fill="#153e39" font-size="21" font-weight="700">
+<text x="78" y="298">Organize the source</text><text x="374" y="298">Connect the claims</text>
+<text x="670" y="298">Review with context</text><text x="966" y="298">Explain the findings</text>
+</g>
+<g fill="#53665f" font-size="18">
+<text x="78" y="336">Documents, sections</text><text x="78" y="362">and source locations</text>
+<text x="374" y="336">AI-assisted analysis</text><text x="374" y="362">with traceable evidence</text>
+<text x="670" y="336">Human decisions and</text><text x="670" y="362">recorded corrections</text>
+<text x="966" y="336">Concise implications</text><text x="966" y="362">and practical revisions</text>
+</g>
+<rect x="56" y="425" width="1168" height="66" rx="12" fill="#dcebe4"/>
+<g fill="#214c40" font-size="18" font-weight="700">
+<text x="79" y="466">Source traceability</text><text x="399" y="466">Visible human judgment</text><text x="819" y="466">Explicit validation limits</text>
+</g>
+<text x="56" y="535" fill="#465d54" font-size="17">Architecture exploration: evidence graphs + focused review agents</text>
+<text x="56" y="569" fill="#60766c" font-size="14">Peter Hilpert · Supervised research prototype · November 2026</text>
 </g></svg>

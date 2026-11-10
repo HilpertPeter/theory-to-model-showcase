@@ -1,157 +1,142 @@
-# Theory-to-Model — AI-Assisted Evidence Review
+# Theory-to-Model — Evidence-Linked AI Review
 
-**Peter Hilpert · Applied AI project lead and domain architect**
+**Peter Hilpert · Applied AI project lead & domain architect**
 
-Turning research publications into structured, source-linked evidence that a
-human reviewer can inspect, correct and evaluate.
+**Research prototype · November 2026**
 
-**Research prototype · Python + LLMs + browser-based review · September 2026**
+![Theory-to-Model: turning research documents into reviewable reasoning](assets/overview.svg)
 
-![From publications to reviewable evidence](assets/overview.svg)
+I turn a complex scientific-review problem into a working AI-assisted workflow:
+organize research documents, connect claims to their sources, support expert
+judgment, and present findings that a reviewer can act on.
 
-## Inspect the work in five minutes
+**My role:** problem formulation, domain modeling, workflow architecture,
+human-review experience, error analysis and validation design. I use AI-assisted
+implementation to build and refine the prototype, with explicit tests and human
+checks at the points where judgment matters.
 
-1. **Trace a claim:** read the [invented source](examples/source.txt) and its
-   [evidence object](examples/evidence.json). The original suggestion and the
-   correction are separate records.
-2. **Verify the artifact:** run `python3 examples/verify_evidence.py` to check the
-   actual source hash, text span and review link. No API key or dependencies.
-3. **Inspect the workflow:** see the source-context and evaluation screenshots
-   below, then the [observed error classes](docs/observed-errors.md).
-4. **Check the limits:** [validation evidence](docs/validation-scope.md) separates
-   tested software behavior from scientific benchmarking that is still pending.
-
-## Run the public example
-
-With Python 3.10 or newer, from a local clone of this repository:
-
-```bash
-python3 examples/verify_evidence.py
-python3 -m unittest discover -s examples -p 'test_*.py'
-```
-
-This verifies the synthetic evidence artifact and runs four verifier tests.
-It requires no API key, network access or additional packages. The interactive
-review interface shown below is available through a guided demonstration;
-its implementation is part of the private research repository.
+[See a review example](docs/review-example.md) ·
+[Explore the architecture work](docs/architecture-exploration.md) ·
+[Check the evidence and limits](docs/validation-scope.md)
 
 ## The problem
 
-A scientific paper spreads its argument across prose, tables and statistical
-models. Extracting plausible text is not enough: reviewers need to see where a
-claim came from, whether context was lost, and how an automated suggestion was
-corrected. Doing this one sentence at a time also creates substantial review
-burden.
+A paper's argument is distributed across its introduction, methods, analyses and
+conclusions. A useful review must connect those pieces: what was intended, what
+was actually examined, and what the findings can support. An isolated comment
+or a fluent summary can miss the gap between them.
 
-## What I built
+Theory-to-Model addresses that gap within the broader **Internal Coherence
+Framework (ICF)** research programme. The initial application is observational
+psychology, with a longer-term interest in other empirical research domains.
 
-I designed and developed a research pipeline combining document processing,
-constrained LLM extraction and human review. Its current application examines
-whether the theoretical argument in an observational study is consistent with
-the reported statistical model.
+## From document processing to useful feedback
 
-This focused project addresses the theory-to-model gap within the broader ICF
-research programme. It is not a presentation of the complete ICF framework.
-
-The project covers publication retrieval and screening, PDF conversion,
-cleaning, section parsing, evidence extraction, and a local review interface.
-Reviewers can inspect source context, correct proposed categories, group shared
-evidence and compare an article's stated rationale with its model description.
-
-**My contribution:** scientific problem formulation, annotation-system design,
-pipeline architecture, iterative error analysis and validation workflow. I used
-AI-assisted implementation to turn those requirements into working software,
-then refined the system through direct use and targeted tests.
-
-## Engineering decisions that make the output reviewable
-
-| Decision | Why it matters |
+| Capability | What the prototype makes possible |
 |---|---|
-| Separate extraction from evaluation | A system must distinguish what an author says from whether the reasoning is coherent. |
-| Preserve source references and artifact hashes | A reviewer can trace a claim back to the input that produced it. |
-| Keep suggestions separate from human corrections | Corrections remain auditable without silently rewriting model output. |
-| Use deterministic processing where practical | Structural repairs and validation can be tested without an LLM call. |
-| Group shared evidence and review only changed regions | Reduce duplicate reading while retaining the original references. |
-| Validate saving, conflicts and recovery | A review workflow must protect human work as well as generate suggestions. |
+| Document intelligence | Organize publications and recover structured evidence with source locations. |
+| Evidence-linked analysis | Inspect the passage and context behind a proposed judgment. |
+| Human review | Confirm or correct decisions while retaining the original suggestion. |
+| Cross-section reasoning | Follow a claim through the study and identify where its support becomes incomplete. |
+| Reviewer communication | Present a short finding, its consequence and a practical revision suggestion, with evidence available on demand. |
 
-## See the prototype
+The supervised research workflow has been exercised end to end. Recent work
+extends the initial extraction and coding tools into linked assessments and
+reviewer-facing explanations. A portable, fully integrated production service
+is the next engineering milestone.
 
-![Working review interface with invented examples](assets/synthetic-review.png)
+## What the output should help a reviewer do
 
-*Screenshot of the working local interface, using entirely invented content.
-The research interface is currently German. This is a demonstration, not a
-benchmark result.*
+![Invented review example: separate an observed association from an intervention claim](assets/review-example.svg)
 
-The walkthrough has three stages: **target → source-context review → separate
-model-coherence evaluation**. A correction is illustrated explicitly in the
-[public JSON example](examples/evidence.json), with the original suggestion retained.
+*Illustrative output design using entirely invented content. It shows the
+communication goal, not a measured model result or the full internal rubric.*
+
+[Read the short example and its proposed author feedback →](docs/review-example.md)
+
+## Working prototype
+
+![Local review interface with invented content](assets/synthetic-review.png)
+
+*Screenshot from the working local review interface. The content is invented;
+this earlier screen illustrates the interaction design, not a benchmark result.*
 
 <details>
-<summary><strong>2. Inspect the source sentence and record a human decision</strong></summary>
+<summary><strong>Inspect source context and a separate human decision</strong></summary>
 
-![Source context and separate human decision](assets/source-review.png)
+![Source context and human review](assets/source-review.png)
 
-The highlighted sentence is read with its immediately preceding context. The
-reviewer confirms or changes the category and records the relevant evidence form.
-All text in this screenshot is invented.
+The reviewer sees the surrounding passage and records a separate decision.
+The original suggestion remains available for comparison and audit.
 
 </details>
 
 <details>
-<summary><strong>3. Evaluate the reasoning separately from extraction</strong></summary>
+<summary><strong>Inspect an evidence-linked evaluation screen</strong></summary>
 
-![Separate human evaluation using synthetic inputs](assets/evaluation-review.png)
+![Evaluation screen using invented content](assets/evaluation-review.png)
 
-A synthetic example of the human-led evaluation screen. The judgment remains
-“not decidable” while supporting evidence has not been fully checked. The entries
-illustrate interaction with the prototype, not a research result or an automatic
-causal judgment.
+This demonstration leaves a judgment unresolved until the necessary evidence
+has been checked. The entries are illustrative, not research annotations.
 
 </details>
 
-## What has been checked
+## Early graph and agent experiments
 
-The September handoff passed **46 synthetic pipeline regression tests**,
-additional persistence and JavaScript checks, and browser tests covering demo
-startup, saving and reloading decisions. Test cases address failure modes such
-as citation abbreviations, section changes, duplicate evidence and stale writes.
+I have explored **evidence graphs** and **bounded agent-style review loops** in
+small development experiments. The questions are practical: can linked evidence
+help retrieve the right context, and can a focused second review find support
+or counterevidence that an initial pass missed?
 
-See the [validation scope](docs/validation-scope.md) for what each type of check
-supports, and the [error taxonomy](docs/observed-errors.md) for concrete failure
-modes and remaining limits.
+The experiments include source/claim linking, targeted critique and documented
+revision. One recurring lesson is that complete, consistent instructions and
+well-scoped evidence matter before additional architectural complexity.
 
-The prototype has also undergone iterative human review on a small development
-set. That informed improvements; it does **not** establish an independent
-accuracy or interrater-reliability estimate.
+These are early research prototypes. A controlled comparison with a matched
+serial baseline, including cost and human-review effort, is still needed.
+[Read the public architecture note →](docs/architecture-exploration.md)
 
-**Current boundary:** local research prototype. Hosted multiuser operation,
-independent benchmarking and validation of the updated automatic evaluation
-stage are future work. The current coherence-review interface is human-led.
+## Evidence of progress
 
-## Applied AI capabilities demonstrated
+- **Working interaction:** local source inspection, separate corrections, saving
+  and reloading have been exercised in the prototype.
+- **Documented iteration:** source reconstruction, missing context, duplicated
+  review work and persistence problems led to targeted changes and checks.
+- **Technical verification:** the November handoff passed 25 synthetic checks
+  covering scoped evidence contracts and a coherence-to-report demonstration.
+- **Evaluation discipline:** original suggestions, human answers and jointly
+  resolved decisions are kept distinct; development agreement is not reported
+  as independent accuracy.
 
-Problem framing in a complex domain; document intelligence; constrained LLM
-workflows; provenance-aware data modeling; human-in-the-loop product design;
-regression testing; and explicit separation of technical verification from
-scientific validation.
+[Validation scope](docs/validation-scope.md) ·
+[What development uncovered](docs/observed-errors.md)
 
-**Technology:** Python, Docling, OpenAI API, SQLite, versioned JSON artifacts,
-HTML/CSS/JavaScript, pytest, unittest and browser automation.
+## Capabilities I bring to a team
 
-## About this repository
+| Area | Contribution demonstrated by this project |
+|---|---|
+| Applied AI product development | Translate a specialist problem into a usable workflow and concrete deliverables. |
+| Domain and knowledge modeling | Represent evidence, claims, context and decisions so they can be inspected together. |
+| Human–AI interaction | Design review tasks around the information a person needs to make a sound decision. |
+| Evaluation and quality assurance | Build contrast cases, analyze errors and separate technical checks from scientific validation. |
+| Technical collaboration | Prepare versioned documentation, demonstrations and an integration roadmap for an engineering team. |
 
-This is a curated project showcase. The research implementation, prompts,
-proprietary evaluation logic and datasets remain private. No executable
-extraction pipeline, API credentials or publication content is distributed here.
-The small public verifier checks only the illustrative artifact; it does not
-expose extraction prompts, internal schemas or scientific scoring rules.
+**Implementation context:** Python, document conversion, LLM-assisted processing,
+structured data, local web interfaces and automated checks. The portfolio
+emphasizes my ownership of the problem, system design and evaluation; implementation
+has been developed with AI assistance.
 
-For a technical discussion or a guided demonstration, contact Peter Hilpert
-through the application or profile accompanying this portfolio.
+For a guided demonstration or a discussion of applied AI, research intelligence
+or human-review workflows, contact me through my [GitHub profile](https://github.com/HilpertPeter)
+or the application accompanying this portfolio.
 
-## License
+## Public showcase scope
 
-The files distributed in this showcase are available under the [MIT License](LICENSE),
-including the synthetic examples and documentation. This license does not cover
-the private research implementation, prompts or datasets that are not distributed
-in this repository.
+The current showcase contains documentation and static visual examples. The
+implementation, prompts, detailed coding rules, internal schemas and research
+data remain private. No Python scripts are included in the current version.
+Earlier commits contain a small illustrative artifact verifier; removing it from
+the current version does not remove the existing Git history.
+
+The [MIT License](LICENSE) applies to the material distributed in this showcase.
+It does not cover the undistributed research implementation, prompts or datasets.
